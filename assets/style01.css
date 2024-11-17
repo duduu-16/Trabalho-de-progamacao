@@ -1,0 +1,42 @@
+body {
+    background: url(img/Eduardo’s\ first\ impressions\ \(2\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header{
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    width: 97.01%;
+    height: 37px;
+    display: flex; /* Usa o modelo flexbox */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    
+}
+
+header img {
+    width: 30px;
+    display: flex;
+    margin-right: 20px;
+}
+
+header h1 {
+    margin: 0; /* Remove a margem padrão do h1 */
+    font-size: 2em; /* Tamanho do texto */
+    margin-right: 20px;
+}
+
+.btn-link {
+    position: absolute;
+    top: 50%; /* Posiciona o topo do botão no meio da tela */
+    left: 50%; /* Posiciona a esquerda do botão no meio da tela */
+    transform: translate(-50%, -50%); /* Ajusta o botão para que ele seja perfeitamente centralizado */
+}
