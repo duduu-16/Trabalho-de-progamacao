@@ -1,55 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
-    <title>Eduardo's first impressions</title>
+    <title>Página 01</title>
+
 </head>
+<header>
+    <p> <a href="index.html"><img src="assets/img/arrow.png" alt="seta voltar"></a></p>
+
+    <p> <a href="pagina2.html"><img src="assets/img/arrow (2).png" alt="seta voltar"></a></p>
+    
+</header>
 <body>
-    <p><a href="index.html"><img src="assets/img/arrow.png" alt="seta para voltar"></a></p>
-    
-    <header>
- 
-    </header>
-    <main>
-        <section id="container">
-           <!-- <article class="cartao">
-                <div class="cartao__conteudo">
-                    <h3>Programação</h3>
-                    <div class="cartao__conteudo__pergunta">
-                        <p>O que é JavaScript?</p>
-                    </div>
-                    <div class="cartao__conteudo__resposta">
-                        <p>O JavaScript é uma linguagem de programação</p>
-                    </div>
-                </div>
-            </article>-->
 
-           
-        </script>
-           
-        </section>
-    </main>
-    <footer>
-        <p>Projeto desenvolvido por Eduardo Maia Pagliarini, apenas por diversão!</p>
-    </footer>
+    <div class="card__especial">
+        <div class="video-list">
 
 
-    <script src="app.js"></script>
-    <script src="perguntas.js"></script>
-</body>
-
-<div class="cartao">
-    <!-- Título do cartão -->
-    <h2>Vídeo de Apresentação</h2>
-    
-    <!-- Vídeo dentro do cartão -->
-    <video controls>
-        <source src="Malu.mp4" type="video/mp4">
+    <h1></h1>
+    <div class="container">
+        <div class="card" data-video="video1">Malu</div>
+        <div class="card" data-video="video2">Emiliane</div>
+        <div class="card" data-video="video3">Lucas</div>
+        <div class="card" data-video="video4">Maria Letícia</div>
+        <div class="video-container" id="videoContainer">
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+            </video>
+        </div>
+        <div class="card" data-video="video6">Tiago</div>
+        <div class="card" data-video="video7">João Ferraz</div>
+        <div class="card" data-video="video8">Mariana</div>
+        <div class="card" data-video="video9">Manu</div>
         
-    </video>
+    </div>
 
-    
-</div>
+    <script>
+        // Seleciona todos os cartões e o container de vídeo
+        const cards = document.querySelectorAll('.card');
+        const videoContainer = document.getElementById('videoContainer');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoSource = document.getElementById('videoSource');
+
+        // Mapear os vídeos para os cartões
+        const videos = {
+            video1: "assets/img/Videos mp4 povo da sala/Malu.mp4",
+            video2: "assets/img/Videos mp4 povo da sala/Emiliane.mp4",
+            video3: "assets/img/Videos mp4 povo da sala/Lucas.mp4",
+            video4: "assets/img/Videos mp4 povo da sala/MariaLetica.mp4",
+            video6: "assets/img/Videos mp4 povo da sala/Tiago.mp4",
+            video7: "assets/img/Videos mp4 povo da sala/Ferraz.mp4",
+            video8: "assets/img/Videos mp4 povo da sala/Mariana.mp4",
+            video9: "assets/img/Videos mp4 povo da sala/Manu.mp4"
+        }
+
+        // Adiciona evento de clique aos cartões
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const videoKey = card.getAttribute('data-video');
+                const videoPath = videos[videoKey];
+
+                // Atualiza a fonte do vídeo
+                videoSource.src = videoPath;
+                videoPlayer.load(); // Recarrega o vídeo
+                videoContainer.style.display = 'block'; // Mostra o vídeo
+                videoPlayer.play(); // Inicia o vídeo
+            });
+        });
+    </script>
+    <footer>
+        <p>Projeto desenvolvido pelo aluno Eduardo Maia Pagliarini Nº 37, apenas por diversão.</p>
+    </footer>
+</body>
 </html>

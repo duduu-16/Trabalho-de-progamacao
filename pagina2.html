@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Página 02</title>
+
+</head>
+<header>
+    <p> <a href="sobre.html"><img src="assets/img/arrow.png" alt="seta voltar"></a></p>
+
+    <p> <a href=""><img src="assets/img/arrow (2).png" alt="seta voltar"></a></p>
+    
+</header>
+<body>
+
+    <div class="card__especial">
+        <div class="video-list">
+
+
+    <h1></h1>
+    <div class="container">
+        <div class="card" data-video="video10">Prof Kieli</div>
+        <div class="card" data-video="video11">Carlos</div>
+        <div class="card" data-video="video12">Maria Cecília</div>
+        <div class="card" data-video="video13">Kauan</div>
+        <div class="video-container" id="videoContainer">
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+            </video>
+        </div>
+        <div class="card" data-video="video15">Antônio</div>
+        <div class="card" data-video="video16">João Guilherme</div>
+        <div class="card" data-video="video17">Vitória</div>
+        <div class="card" data-video="video18">Rafael</div>
+        
+    </div>
+
+    <script>
+        // Seleciona todos os cartões e o container de vídeo
+        const cards = document.querySelectorAll('.card');
+        const videoContainer = document.getElementById('videoContainer');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoSource = document.getElementById('videoSource');
+
+        // Mapear os vídeos para os cartões
+        const videos = {
+            video1: "assets/img/Videos mp4 povo da sala/Malu.mp4",
+            video2: "assets/img/Videos mp4 povo da sala/Emiliane.mp4",
+            video3: "assets/img/Videos mp4 povo da sala/Lucas.mp4",
+            video4: "assets/img/Videos mp4 povo da sala/MariaLetica.mp4",
+            video6: "assets/img/Videos mp4 povo da sala/Tiago.mp4",
+            video7: "assets/img/Videos mp4 povo da sala/Ferraz.mp4",
+            video8: "assets/img/Videos mp4 povo da sala/Mariana.mp4",
+            video9: "assets/img/Videos mp4 povo da sala/Manu.mp4"
+        }
+
+        // Adiciona evento de clique aos cartões
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const videoKey = card.getAttribute('data-video');
+                const videoPath = videos[videoKey];
+
+                // Atualiza a fonte do vídeo
+                videoSource.src = videoPath;
+                videoPlayer.load(); // Recarrega o vídeo
+                videoContainer.style.display = 'block'; // Mostra o vídeo
+                videoPlayer.play(); // Inicia o vídeo
+            });
+        });
+    </script>
+    <footer>
+        <p>Projeto desenvolvido pelo aluno Eduardo Maia Pagliarini Nº 37, apenas por diversão.</p>
+    </footer>
+</body>
+</html>
